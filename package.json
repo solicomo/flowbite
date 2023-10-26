@@ -41,8 +41,13 @@
   "module": "lib/esm/index.js",
   "types": "lib/esm/index.d.ts",
   "style": "dist/flowbite.min.css",
-  "repository": "https://github.com/solicomo/flowbite.git",
-  "bugs": "https://github.com/themesberg/flowbite/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solicomo/flowbite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/themesberg/flowbite/issues"
+  },
   "homepage": "https://flowbite.com",
   "contributors": [
     "Zoltán Szőgyényi (https://twitter.com/zoltanszogyenyi)",
