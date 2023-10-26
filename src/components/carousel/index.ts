@@ -313,6 +313,41 @@ export function initCarousels() {
                 carousel.prev();
             });
         }
+
+        const carouselCycleEl = $carouselEl.querySelector(
+			'[data-carousel-cycle]'
+		);
+		const carouselPauseEl = $carouselEl.querySelector(
+			'[data-carousel-pause]'
+		);
+
+		if (carouselCycleEl) {
+			carouselCycleEl.addEventListener('click', () => {
+				carousel.cycle();
+
+				carouselCycleEl.classList.add('hidden');
+				carouselCycleEl.classList.remove('flex');
+
+				if (carouselPauseEl) {
+					carouselPauseEl.classList.add('flex');
+					carouselPauseEl.classList.remove('hidden');
+				}
+			});
+		}
+
+		if (carouselPauseEl) {
+			carouselPauseEl.addEventListener('click', () => {
+				carousel.pause();
+
+				carouselPauseEl.classList.add('hidden');
+				carouselPauseEl.classList.remove('flex');
+
+				if (carouselCycleEl) {
+					carouselCycleEl.classList.add('flex');
+					carouselCycleEl.classList.remove('hidden');
+				}
+			});
+		}
     });
 }
 
